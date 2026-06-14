@@ -1,0 +1,227 @@
+:root {
+  --color-primary: #1b4332;
+  --color-accent: #43aa8b;
+  --color-accent-light: #7ae3c2;
+  --color-text: #ffffff;
+
+  --font-body: "Roboto", sans-serif;
+  --font-title: "Italianno", cursive;
+
+  --shadow-card: 0 10px 25px rgba(0,0,0,.2);
+  --shadow-hover: 0 0 20px rgba(120,255,220,.6);
+  
+}
+
+body {
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+
+.about-section {
+  padding: 80px 0;
+}
+
+.titulo {
+  font-family: var(--font-italianno);
+  font-size: 64px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.texto {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.imagen {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  border: 3px solid var(--color-secondary);
+}
+
+/* ajustes responsivos */
+@media (max-width: 992px) {
+  .titulo {
+    font-size: 48px;
+  }
+
+  .texto {
+    text-align: center;
+  }
+
+  .imagen {
+    max-width: 280px;
+  }
+}
+
+/* Cards Team */
+
+.formatoTarjetas {
+  background: #1b4332;
+  border: none;
+  width: 260px;
+  min-height: 350px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  color:white;
+}
+
+.formatoTarjetas:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card);
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.animacionImg {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.animacionImg:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+.formatoLogotipos {
+  color: #43aa8b;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.formatoLogotipos:hover {
+  color: var(color-accent-light);
+  font-size: 10px;
+}
+
+.animacionImg {
+  transition: all 0.4s ease;
+  margin: auto;
+}
+
+.animacionImg:hover {
+  box-shadow: 0 0 20px rgba(120, 255, 220, .6);
+  margin: auto;
+}
+
+.card-role {
+  color: var(color-accent-light);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.team-section {
+  padding: 40px 0 80px;
+}
+
+.card-description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 0.4s ease;
+}
+
+.formatoTarjetas:hover .card-description {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+/* section {
+  padding: 100px 0;
+}
+
+section h2 {
+  color: var(--white-color);
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+} */
+
+.mission-section {
+  background: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.mission-section .col-md-6 {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  transition: 0.4s;
+  
+}
+
+/* .mission-section .col-md-6:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow);
+} */
+/* .values-section {
+  background-color: #143d2e;
+} */
+
+/* .values-section .col-md-4 {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+} */
+
+/* .values-section .col-md-4:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow);
+} */
+
+/* .values-section i {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  display: block;
+  font-size: 3rem;
+} */
+/* 
+.values-section h4 {
+  color: var(--white-color);
+  margin-bottom: 15px;
+} */
+
+/* .stats-section {
+  background: linear-gradient(
+    135deg,
+    #081c15,
+    #1b4332
+  );
+} */
+
+/* .stats-section .col-md-4 {
+  padding: 30px;
+} */
+
+/* .stats-section h2 {
+  color: var(--accent-color);
+  font-size: 3rem;
+  font-weight: bold;
+} */
+
+/* .stats-section p {
+  color: var(--light-color);
+  font-size: 1.1rem;
+} */

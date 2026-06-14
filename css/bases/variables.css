@@ -1,0 +1,20 @@
+:root {
+    /* Colors */
+    --primary-background: #43aa8b;
+    --secondary-color: #43aa8b;
+    --text-color: #ffffff;
+    --background-color: #1b4332;
+
+    /* Fonts */
+    --font-title: 'Italianno', sans-serif;
+    --font-text: 'Roboto', sans-serif;
+
+    /* Spacing */
+    /* --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px; */
+
+    /* Border Radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+}

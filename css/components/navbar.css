@@ -1,0 +1,64 @@
+.navbarCustom {
+  background-color: #43aa8b;
+  border-radius: 20px;
+  padding: 15px 30px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.custom-btn {
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+.custom-btn:hover {
+  color: #1c2a2a;
+}
+
+.cart-badge {
+  background-color: #1c2a2a;
+}
+
+/* Hamburger button */
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Make icon white */
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile menu */
+@media (max-width: 991.98px) {
+  .nav-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .custom-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+  }
+}

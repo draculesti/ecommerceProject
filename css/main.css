@@ -1,0 +1,17 @@
+
+/* @import url('./base/variables.css'); */
+@import url('./components/navbar.css');
+@import url('./components/footer.css');
+body{
+  background-color: #1c2a2a;
+  font-family: 'Roboto' sans-serif;
+  color: white;
+
+}
+
+main {
+    flex: 1;
+}
+.titlesFont{
+  font-family: 'Italianno', sans-serif;
+}
