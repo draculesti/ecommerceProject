@@ -13,7 +13,6 @@
 }
 
 body {
-  background: var(--color-primary);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -62,7 +61,7 @@ body {
 /* Cards Team */
 
 .formatoTarjetas {
-  background: #1b4332;
+  background-color: #1c2a2a;
   border: none;
   width: 260px;
   min-height: 350px;
@@ -138,90 +137,3 @@ body {
   opacity: 1;
   margin-top: 20px;
 }
-
-/* section {
-  padding: 100px 0;
-}
-
-section h2 {
-  color: var(--white-color);
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
-section p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-} */
-
-.mission-section {
-  background: linear-gradient(
-    180deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-}
-
-.mission-section .col-md-6 {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 40px;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  transition: 0.4s;
-  
-}
-
-/* .mission-section .col-md-6:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow);
-} */
-/* .values-section {
-  background-color: #143d2e;
-} */
-
-/* .values-section .col-md-4 {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 40px 30px;
-  border-radius: 20px;
-  transition: all 0.4s ease;
-} */
-
-/* .values-section .col-md-4:hover {
-  transform: translateY(-12px);
-  box-shadow: var(--shadow);
-} */
-
-/* .values-section i {
-  color: var(--accent-color);
-  margin-bottom: 20px;
-  display: block;
-  font-size: 3rem;
-} */
-/* 
-.values-section h4 {
-  color: var(--white-color);
-  margin-bottom: 15px;
-} */
-
-/* .stats-section {
-  background: linear-gradient(
-    135deg,
-    #081c15,
-    #1b4332
-  );
-} */
-
-/* .stats-section .col-md-4 {
-  padding: 30px;
-} */
-
-/* .stats-section h2 {
-  color: var(--accent-color);
-  font-size: 3rem;
-  font-weight: bold;
-} */
-
-/* .stats-section p {
-  color: var(--light-color);
-  font-size: 1.1rem;
-} */
