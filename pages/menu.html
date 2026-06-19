@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,49 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../css/main.css">
-
+  <link rel="stylesheet" href="../css/pages/menu.css">
 </head>
+
 <body>
   <div id="navbar-container"></div>
-  <h1>menu</h1>
+  <header class="container py-4">
+
+    <h1 class="text-center">Menú</h1>
+
+    <h2 class="text-center mb-4">
+      Comidas, Bebidas, Postres y Desayunos
+    </h2>
+
+    <div class="text-center">
+
+      <button class="filtro-btn" onclick="filtrarMenu('Comidas')">
+        Comidas
+      </button>
+
+      <button class="filtro-btn" onclick="filtrarMenu('Bebidas')">
+        Bebidas
+      </button>
+
+      <button class="filtro-btn" onclick="filtrarMenu('Postres')">
+        Postres
+      </button>
+
+      <button class="filtro-btn" onclick="filtrarMenu('Desayunos')">
+        Desayunos
+      </button>
+    </div>
+
+  </header>
+
+  <main class="container">
+    <div id="menuContainer" class="row g-4"></div>
+  </main>
   <footer id="footer"></footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script type="module" src="../js/main.js"></script>
-
+  <script type="module" src="../data/menuData.js"></script>
 </body>
+
 </html>
