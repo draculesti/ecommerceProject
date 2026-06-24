@@ -11,15 +11,88 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css//pages/contact.css">
 </head>
 <body>
   <div id="navbar-container"></div>
-  <h1>Contact page</h1>
+  
+  <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+
+                    <h1 class="text-center mb-4">
+                        CONTÁCTANOS
+                    </h1>
+
+                    <form>
+                        <div id="alertaSitio"></div>
+
+                        <div class="mb-3">
+                            <label for="nombreInput" class="form-label">
+                                Nombre
+                            </label>
+                            <input type="text" class="form-control" id="nombreInput" placeholder="Nombre completo">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">
+                                Correo electrónico
+                            </label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Ej. jhon@gmail.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telInput" class="form-label">
+                                Teléfono
+                            </label>
+                            <input type="tel" class="form-control" id="telInput" placeholder="Ej. +524978669913">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensajeInput" class="form-label">
+                                Comentarios / Sugerencias / Quejas
+                            </label>
+                            <textarea class="form-control"
+                                      id="mensajeInput"
+                                      rows="5" placeholder="Puedes escribir aquí..."></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button
+                                id="formButton"
+                                type="submit"
+                                class="btn btn-primary px-4"
+                                style="background-color:#43aa8b;border:none;">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+  
   <footer id="footer"></footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "i2BE_B8pF-wlfhbkZ"
+        });
+    </script>
+
+  <script type="module" src="../js/pages/contact.js"></script>
   <script type="module" src="../js/main.js"></script>
 </body>
 </html>

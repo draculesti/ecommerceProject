@@ -27,6 +27,8 @@ export const renderNavbar = ()=>{
            <a href="../pages/menu.html" class="btn custom-btn">Menu</a>
            <a href="../pages/aboutUs.html" class="btn custom-btn">Sobre nostroso</a>
            <a href="../pages/contact.html" class="btn custom-btn">Contacto</a>
+           <a href="../pages/reservation.html" class="btn custom-btn">Resevar</a>
+           <a href="../pages/login.html" class="btn custom-btn">Login</a>
            <a href="../pages/cart.html" class="btn custom-btn"> <i class="fa-solid fa-cart-shopping"></i>
            </a>
          </div>
