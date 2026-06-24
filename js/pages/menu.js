@@ -1,14 +1,13 @@
-import { menuItems } from "../../data/menuData.js";
-
-
 
 const menuContainer = document.getElementById("menuContainer");
 
 window.onload = () => {
-  filtrarMenu("Comidas");
+  menuFilter("Comidas");
 };
 
-function renderMenu(lista = menuItems) {
+let menuData = JSON.parse(localStorage.getItem("menu"));
+
+function renderMenu(lista = menuData) {
 
   menuContainer.innerHTML = "";
 
@@ -40,15 +39,10 @@ function renderMenu(lista = menuItems) {
 
 }
 
-function filtrarMenu(categoria) {
-
-  const filtrados = menuItems.filter(
-    item => item.categoria === categoria
-  );
-
-  renderMenu(filtrados);
-
+function menuFilter(category) {
+  const categoryFilter = menuData.filter(item => item.category === category);
+  renderMenu(categoryFilter);
 }
 
 
-window.filtrarMenu = filtrarMenu;
+window.menuFilter = menuFilter;
