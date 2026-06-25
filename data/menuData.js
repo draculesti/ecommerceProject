@@ -1,5 +1,6 @@
 export const menuItems = [
     {
+        id: 1,
         name: "Pambazos",
         price: "$55.00",
         category: "Comidas",
@@ -7,6 +8,7 @@ export const menuItems = [
         description: "Bolillo bañado en salsa roja relleno de papa con chorizo."
     },
     {
+        id: 2,
         name: "Pancita",
         price: "$150.00",
         category: "Comidas",
@@ -14,6 +16,7 @@ export const menuItems = [
         description: "Panza de res en chile huajillo acompañado de oregano y limon."
     },
     {
+        id: 3,
         name: "Quesadillas",
         price: "$50.00",
         category: "Comidas",
@@ -21,6 +24,7 @@ export const menuItems = [
         description: "Tortillas rellenas de queso y diferentes guisados."
     },
     {
+        id: 4,
         name: "Sopes",
         price: "$80.00 orden",
         category: "Comidas",
@@ -28,6 +32,7 @@ export const menuItems = [
         description: "Base de maíz con frijoles, carne, crema y queso."
     },
     {
+        id: 5,
         name: "Pozole",
         price: "$150.00",
         category: "Comidas",
@@ -35,6 +40,7 @@ export const menuItems = [
         description: "Caldo tradicional con maíz cacahuazintle y carne."
     },
     {
+        id: 6,
         name: "Gorditas",
         price: "$60.00",
         category: "Comidas",
@@ -42,6 +48,7 @@ export const menuItems = [
         description: "Masa de maíz rellena de guisos tradicionales."
     },
     {
+        id: 7,
         name: "Tacos",
         price: "$90.00 orden",
         category: "Comidas",
@@ -49,6 +56,7 @@ export const menuItems = [
         description: "Tortillas de maíz con diferentes tipos de carne."
     },
     {
+        id: 8,
         name: "Enchiladas",
         price: "$150.00",
         category: "Comidas",
@@ -56,6 +64,7 @@ export const menuItems = [
         description: "Tortillas bañadas en salsa o mole rellenas de pollo."
     },
     {
+        id: 9,
         name: "Mole con pollo",
         price: "$100.00",
         category: "Comidas",
@@ -63,6 +72,7 @@ export const menuItems = [
         description: "Piezas de pollo cocidas, bañadas en una salsa espesa, aromática a base de especias y semillas."
     },
     {
+        id: 10,
         name: "Agua de piña",
         price: "$60.00L",
         category: "Bebidas",
@@ -70,6 +80,7 @@ export const menuItems = [
         description: "Bebida refrescante preparada con fruta de piña natural."
     },
     {
+        id: 11,
         name: "Agua de mango",
         price: "$60.00L",
         category: "Bebidas",
@@ -77,6 +88,7 @@ export const menuItems = [
         description: "Bebida refrescante preparada con fruta de mango natural."
     },
     {
+        id: 12,
         name: "Tepache",
         price: "$60.00L",
         category: "Bebidas",
@@ -84,6 +96,7 @@ export const menuItems = [
         description: "Bebida tradicional fermentada a base de piña."
     },
     {
+        id: 13,
         name: "Café",
         price: "$45.00",
         category: "Desayunos",
@@ -91,6 +104,7 @@ export const menuItems = [
         description: "Café recién preparado para acompañar el desayuno."
     },
     {
+        id: 14,
         name: "Atole de maiz",
         price: "$45.00",
         category: "Desayunos",
@@ -98,6 +112,7 @@ export const menuItems = [
         description: "Bebida caliente hecha a base de maiz endulzada con piloncillo o azucar."
     },
     {
+        id: 15,
         name: "Pan de Dulce",
         price: "25.00 pza",
         category: "Desayunos",
@@ -105,6 +120,7 @@ export const menuItems = [
         description: "Variedad de panes tradicionales mexicanos."
     },
     {
+        id: 16,
         name: "Huevos a la Mexicana",
         price: "$60.00",
         category: "Desayunos",
@@ -112,6 +128,7 @@ export const menuItems = [
         description: "Combinacion de huevos revueltos con tomate, cebolla y chile con frijoles."
     },
     {
+        id: 17,
         name: "Guajolotas",
         price: "$60.00",
         category: "Desayunos",
@@ -119,6 +136,7 @@ export const menuItems = [
         description: "Tamal de maiz de sabor al gusto puede ir acompañado de bolillo."
     },
     {
+        id: 18,
         name: "Chilaquiles",
         price: "$80.00",
         category: "Desayunos",
@@ -126,6 +144,7 @@ export const menuItems = [
         description: "Totopos bañados en salsa verde o roja acompañados con crema y queso."
     },
     {
+        id: 19,
         name: "Dulce de Camote",
         price: "$60.00",
         category: "Postres",
@@ -133,6 +152,7 @@ export const menuItems = [
         description: "Postre típico elaborado con camote dulce."
     },
     {
+        id: 20,
         name: "Arroz con leche",
         price: "$50.00",
         category: "Postres",
@@ -140,6 +160,7 @@ export const menuItems = [
         description: "Arroz a coccion lenta en leche con azucar y canela."
     },
     {
+        id: 21,
         name: "Dulce de Calabaza",
         price: "$60.00",
         category: "Postres",

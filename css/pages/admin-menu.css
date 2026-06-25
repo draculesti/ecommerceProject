@@ -1,0 +1,116 @@
+
+.main-container {
+    padding: 40px;
+    flex-grow: 1;
+}
+
+.form-panel {
+    background-color: #587E81;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    color: #E0E0E0;
+}
+
+.panel-header-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.panel-header-action h1 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.custom-input {
+    background-color: #D3D3D3;
+    color: #333;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: #A9A9A9;
+    background-color: #D8D8D8;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.image-label-text {
+    color: #E0E0E0;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+/* Botón Verde-Azulado Estilo Imagen 2 */
+.btn-custom {
+    background-color: #4CAF93;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #40927C;
+    color: white;
+}
+
+
+/* Estilos de la Tabla */
+.data-table {
+    width: 100%;
+    color: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 18px 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #506868;
+    vertical-align: middle;
+}
+
+.data-table th {
+    font-weight: 400;
+    color: #B0C4C5;
+}
+
+/* Contenedor de la imagen subida en la tabla */
+.table-image-container {
+    width: 60px;
+    height: 40px;
+    background-color: #4A5E5F;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image-placeholder {
+    font-size: 10px;
+    color: #8AA3A4;
+}
