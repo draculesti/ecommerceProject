@@ -1,0 +1,162 @@
+/* ==========================
+   RESET BÁSICO
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* ==========================
+   TARJETA DEL FORMULARIO
+========================== */
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    background-color: #EDFFF8;
+    color: #000000; 
+}
+
+.auth-card h1, 
+.auth-card h2 {
+    color: #000000;
+}
+
+/* ==========================
+   LOGO
+========================== */
+.logo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================
+   TITULOS
+========================== */
+.project-title, .form-title {
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 2rem;
+}
+
+/* ==========================
+   MENSAJES DE ERROR
+========================== */
+.error-message {
+    display: block;
+    min-height: 40px;
+    margin-top: 5px;
+    color: #dc3545;
+    font-size: 0.85rem;
+}
+
+/* ==========================
+   INPUTS Y PASSWORD
+========================== */
+.form-control {
+    border-radius: 14px;
+    min-height: 48px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.password-container {
+    position: relative;
+    display: flex; 
+    align-items: center;
+    width: 100%;
+    gap: 10px; 
+}
+
+.password-container .form-control {
+    flex: 1; 
+    min-height: 48px;
+}
+
+.password-toggle {
+    all: unset;
+    cursor: pointer;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px; 
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+.password-toggle:hover {
+    color: #343a40;
+}
+
+/* ==========================
+   BOTONES
+========================== */
+.btn-primary {
+    background-color: #43aa8b;
+    border-color: #43aa8b;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #388f75;
+    border-color: #388f75;
+}
+
+/* ==========================
+   LINKS
+========================== */
+.text-center a {
+    color: #43aa8b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-center a:hover {
+    color: #388f75;
+    text-decoration: underline;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+    .logo-container {
+        width: 100px;
+        height: 100px;
+    }
+}
