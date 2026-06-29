@@ -37,6 +37,8 @@ document.getElementById("togglePassword");
 const toggleConfirmPassword =
 document.getElementById("toggleConfirmPassword");
 
+// Mostrar / Ocultar contraseña
+
 togglePassword.addEventListener("click", () => {
 
     const icon =
@@ -60,12 +62,28 @@ togglePassword.addEventListener("click", () => {
 
 });
 
+// Mostrar / Ocultar confirmar contraseña
+
 toggleConfirmPassword.addEventListener("click", () => {
 
-    confirmPassword.type =
-    confirmPassword.type === "password"
-    ? "text"
-    : "password";
+    const icon =
+    toggleConfirmPassword.querySelector("i");
+
+    if (confirmPassword.type === "password") {
+
+        confirmPassword.type = "text";
+
+        icon.classList.remove("bi-eye");
+        icon.classList.add("bi-eye-slash");
+
+    } else {
+
+        confirmPassword.type = "password";
+
+        icon.classList.remove("bi-eye-slash");
+        icon.classList.add("bi-eye");
+
+    }
 
 });
 
@@ -90,6 +108,7 @@ function mostrarError(input, elemento, mensaje) {
     input.classList.add("is-invalid");
 
     elemento.textContent = mensaje;
+
 }
 
 function mostrarCorrecto(input, elemento) {
@@ -98,6 +117,7 @@ function mostrarCorrecto(input, elemento) {
     input.classList.add("is-valid");
 
     elemento.textContent = "";
+
 }
 
 function limpiarValidaciones() {
@@ -135,7 +155,7 @@ registroForm.addEventListener("submit", (event) => {
 
     let formularioValido = true;
 
-    // ======================
+        // ======================
     // NOMBRE
     // ======================
 
@@ -260,16 +280,18 @@ registroForm.addEventListener("submit", (event) => {
     }
 
     if (!formularioValido) {
+
         return;
+
     }
 
-    // ======================
-    // LOCAL STORAGE
+        // ======================
+    // OBTENER USUARIOS
     // ======================
 
-    const usuarios =
+    let usuarios =
     JSON.parse(
-        localStorage.getItem("usuarios")
+        localStorage.getItem("users")
     ) || [];
 
     // ======================
@@ -291,6 +313,7 @@ registroForm.addEventListener("submit", (event) => {
         );
 
         return;
+
     }
 
     // ======================
@@ -309,10 +332,20 @@ registroForm.addEventListener("submit", (event) => {
 
     };
 
-    usuarios.push(nuevoUsuario);
+    // ======================
+    // AGREGAR USUARIO
+    // ======================
+
+    usuarios.push(
+        nuevoUsuario
+    );
+
+    // ======================
+    // GUARDAR JSON
+    // ======================
 
     localStorage.setItem(
-        "usuarios",
+        "users",
         JSON.stringify(usuarios)
     );
 
