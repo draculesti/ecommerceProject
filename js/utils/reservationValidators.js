@@ -75,7 +75,7 @@ export const validateDate = (date) => {
   if (selectedDate < today) {
     showError(
       date,
-      'Reservation date cannot be in the past.'
+      'La fecha de reservacion no puede ser pasada'
     );
     return false;
   }
