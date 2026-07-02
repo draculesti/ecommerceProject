@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.hero {
+	position: relative;
+	min-height: 100vh;
+	background-image: url("https://i.pinimg.com/1200x/38/71/29/38712991bd6bc991ecae9add5f799631.jpg");
+	/* background-image:url("https://i.pinimg.com/1200x/5c/ed/c8/5cedc86917fe92d179bea45762802564.jpg"); */
+	background-size: cover;
+	background-position: center;
+}
+
+.overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.65);
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+}
+
+.subtitle {
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: #38a893;
+	font-weight: 600;
+}
+
+.lead {
+	max-width: 500px;
+	color: #e5e5e5;
+}
+
+.reservation-card {
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+	padding: 35px;
+	color: white;
+	box-shadow:
+		0 15px 40px rgba(0, 0, 0, .3);
+}
+
+.form-control,
+.form-select {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: white;
+}
+.form-select option {
+  color: black;
+}
+
+.form-control:focus,
+.form-select:focus {
+	background: rgba(255, 255, 255, 0.15);
+	color: white;
+	border-color: #38a893;
+	box-shadow: none;
+}
+
+.form-control::placeholder {
+	color: #d0d0d0;
+}
+
+.btn-gold {
+	background: #38a893;
+	color: black;
+	font-weight: 600;
+	padding: 12px;
+	border: none;
+	transition: .3s;
+}
+
+.btn-gold:hover {
+	background: #38a893;
+	transform: translateY(-2px);
+}
+
+@media(max-width:991px) {
+
+	.hero {
+		padding: 50px 0;
+	}
+
+	.reservation-card {
+		margin-top: 40px;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+}

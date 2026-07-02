@@ -4,9 +4,20 @@
 
 .card-body{
     color:white;
-    background-color: #1b4332;
+    
 }
 
 input::placeholder {
   font-size: 1em;
+}
+
+.card {
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 20px;
+	padding: 35px;
+	color: white;
+	box-shadow:
+		0 15px 40px rgba(0, 0, 0, .3);
 }
