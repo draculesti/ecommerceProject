@@ -7,7 +7,7 @@ export const renderNavbar = ()=>{
        <a class="navbar-brand fw-bold" href="../index.html">
           <div class="logo">
            <img src="../assets/logo.png" alt="Mixtecatl_Logo">
-          MIXTECALT
+          MIXTECATL
           </div>
        </a>
        <button
@@ -25,8 +25,8 @@ export const renderNavbar = ()=>{
        <div class="collapse navbar-collapse" id="menu">
          <div class="nav-buttons ms-auto">
            <a href="../index.html" class="btn custom-btn">Inicio</a>
-           <a href="../pages/menu.html" class="btn custom-btn">Menu</a>
-           <a href="../pages/aboutUs.html" class="btn custom-btn">Nostroso</a>
+           <a href="../pages/menu.html" class="btn custom-btn">Menú</a>
+           <a href="../pages/aboutUs.html" class="btn custom-btn">Nosotros</a>
            <a href="../pages/contact.html" class="btn custom-btn">Contacto</a>
            <a href="../pages/reservation.html" class="btn custom-btn">Resevar</a>
            <a href="../pages/login.html" class="btn custom-btn">Login</a>
