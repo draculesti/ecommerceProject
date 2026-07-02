@@ -3,6 +3,9 @@
   /* border-radius: 20px; */
   padding: 15px 30px;
 }
+.logo{
+  color: #f2e9d5;
+}
 
 .logo img {
   width: 70px;
