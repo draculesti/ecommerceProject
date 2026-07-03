@@ -1,24 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Carrito de compras | Mixtecalt</title>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Italianno&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/cart.css">
 </head>
+
 <body>
+
   <div id="navbar-container"></div>
-  <h1>cart</h1>
+
+  <main class="cart-page">
+
+    <section class="cart-hero">
+      <div class="cart-hero-content">
+        <p class="cart-subtitle">Tu pedido</p>
+        <h1>Carrito de compras</h1>
+        <p>Revisa los productos seleccionados antes de confirmar tu pedido.</p>
+      </div>
+    </section>
+
+    <section class="cart-layout">
+
+      <section class="cart-products-card">
+        <div class="cart-card-header">
+          <div>
+            <h2>Productos seleccionados</h2>
+            <p>Modifica cantidades, elimina productos o confirma tu compra.</p>
+          </div>
+
+          <span id="products-count">0 productos</span>
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div id="empty-cart" class="empty-cart d-none">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega productos del menú para comenzar tu pedido.</p>
+          <a href="./menu.html">Ver menú</a>
+        </div>
+      </section>
+
+      <aside class="cart-summary-card">
+        <h2>Resumen de compra</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>IVA 16%</span>
+          <strong id="iva">$0.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Envío</span>
+          <strong id="shipping">$0.00</strong>
+        </div>
+
+        <hr>
+
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="total">$0.00</strong>
+        </div>
+
+        <button id="checkout-btn" class="cart-btn-primary">
+          Finalizar compra
+        </button>
+
+        <button id="clear-cart-btn" class="cart-btn-secondary">
+          Vaciar carrito
+        </button>
+
+        <p class="cart-note">
+          El total se actualiza automáticamente conforme cambia la cantidad de productos.
+        </p>
+      </aside>
+
+    </section>
+
+  </main>
+
   <footer id="footer"></footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
   <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/pages/cart.js"></script>
+
 </body>
+
 </html>
