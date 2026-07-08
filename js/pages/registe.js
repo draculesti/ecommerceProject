@@ -25,24 +25,24 @@ const errorPassword = document.getElementById("errorPassword");
 const errorConfirmPassword = document.getElementById("errorConfirmPassword");
 
 const mensajeGeneral =
-document.getElementById("mensajeGeneral");
+    document.getElementById("mensajeGeneral");
 
 // ==========================
 // MOSTRAR / OCULTAR PASSWORD
 // ==========================
 
 const togglePassword =
-document.getElementById("togglePassword");
+    document.getElementById("togglePassword");
 
 const toggleConfirmPassword =
-document.getElementById("toggleConfirmPassword");
+    document.getElementById("toggleConfirmPassword");
 
 // Mostrar / Ocultar contraseña
 
 togglePassword.addEventListener("click", () => {
 
     const icon =
-    togglePassword.querySelector("i");
+        togglePassword.querySelector("i");
 
     if (password.type === "password") {
 
@@ -67,7 +67,7 @@ togglePassword.addEventListener("click", () => {
 toggleConfirmPassword.addEventListener("click", () => {
 
     const icon =
-    toggleConfirmPassword.querySelector("i");
+        toggleConfirmPassword.querySelector("i");
 
     if (confirmPassword.type === "password") {
 
@@ -84,17 +84,6 @@ toggleConfirmPassword.addEventListener("click", () => {
         icon.classList.add("bi-eye");
 
     }
-
-});
-
-// ==========================
-// SOLO NUMEROS TELEFONO
-// ==========================
-
-telefono.addEventListener("input", () => {
-
-    telefono.value =
-    telefono.value.replace(/\D/g, "");
 
 });
 
@@ -155,12 +144,12 @@ registroForm.addEventListener("submit", (event) => {
 
     let formularioValido = true;
 
-        // ======================
+    // ======================
     // NOMBRE
     // ======================
 
     const nombreRegex =
-    /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
+        /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,}$/;
 
     if (!nombreRegex.test(nombre.value.trim())) {
 
@@ -182,13 +171,49 @@ registroForm.addEventListener("submit", (event) => {
     }
 
     // ======================
-    // TELEFONO
-    // ======================
+// TELEFONO
+// ======================
 
-    const telefonoRegex =
-    /^\d{10}$/;
+const valor = telefono.value.trim();
 
-    if (!telefonoRegex.test(telefono.value)) {
+const formatoRegex = /^\+?[\d\s()-]{10,18}$/;
+
+// Campo obligatorio
+if (!valor) {
+
+    mostrarError(
+        telefono,
+        errorTelefono,
+        "El teléfono es obligatorio."
+    );
+
+    formularioValido = false;
+
+}
+// Formato permitido
+else if (!formatoRegex.test(valor)) {
+
+    mostrarError(
+        telefono,
+        errorTelefono,
+        "Ingrese un número de teléfono válido."
+    );
+
+    formularioValido = false;
+
+}
+else {
+
+    // Elimina todo excepto números
+    let soloNumeros = valor.replace(/\D/g, "");
+
+    // Si empieza con 52 y tiene 12 dígitos, elimina el prefijo del país
+    if (soloNumeros.startsWith("52") && soloNumeros.length === 12) {
+        soloNumeros = soloNumeros.substring(2);
+    }
+
+    // Debe quedar exactamente 10 dígitos
+    if (soloNumeros.length !== 10) {
 
         mostrarError(
             telefono,
@@ -198,7 +223,32 @@ registroForm.addEventListener("submit", (event) => {
 
         formularioValido = false;
 
-    } else {
+    }
+    // No permitir todos los dígitos iguales (0000000000, 1111111111)
+    else if (/^(\d)\1{9}$/.test(soloNumeros)) {
+
+        mostrarError(
+            telefono,
+            errorTelefono,
+            "Ingrese un número de teléfono válido."
+        );
+
+        formularioValido = false;
+
+    }
+    // No permitir 6 o más dígitos iguales consecutivos
+    else if (/(\d)\1{5,}/.test(soloNumeros)) {
+
+        mostrarError(
+            telefono,
+            errorTelefono,
+            "Ingrese un número de teléfono válido. Evite usar demasiados dígitos repetidos."
+        );
+
+        formularioValido = false;
+
+    }
+    else {
 
         mostrarCorrecto(
             telefono,
@@ -207,12 +257,13 @@ registroForm.addEventListener("submit", (event) => {
 
     }
 
+}
     // ======================
     // EMAIL
     // ======================
 
     const emailRegex =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email.value.trim())) {
 
@@ -285,24 +336,24 @@ registroForm.addEventListener("submit", (event) => {
 
     }
 
-        // ======================
+    // ======================
     // OBTENER USUARIOS
     // ======================
 
     let usuarios =
-    JSON.parse(
-        localStorage.getItem("users")
-    ) || [];
+        JSON.parse(
+            localStorage.getItem("users")
+        ) || [];
 
     // ======================
     // CORREO DUPLICADO
     // ======================
 
     const correoExiste =
-    usuarios.some(usuario =>
-        usuario.email.toLowerCase() ===
-        email.value.trim().toLowerCase()
-    );
+        usuarios.some(usuario =>
+            usuario.email.toLowerCase() ===
+            email.value.trim().toLowerCase()
+        );
 
     if (correoExiste) {
 
@@ -370,7 +421,7 @@ registroForm.addEventListener("submit", (event) => {
     setTimeout(() => {
 
         window.location.href =
-        "login.html";
+            "login.html";
 
     }, 3000);
 
