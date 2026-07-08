@@ -15,32 +15,16 @@ CREATE SCHEMA IF NOT EXISTS `Mixtecatl-DB` DEFAULT CHARACTER SET utf8 ;
 USE `Mixtecatl-DB` ;
 
 -- -----------------------------------------------------
--- Table `Mixtecatl-DB`.`Usuarios`
+-- Table `Mixtecatl-DB`.`Usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Usuarios` (
-  `idUsuarios` INT NOT NULL AUTO_INCREMENT,
-  `Nombre_Usuario` VARCHAR(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Usuario` (
+  `idUsuario` BIGINT(50) NOT NULL AUTO_INCREMENT,
+  `Nombre` VARCHAR(50) NOT NULL,
   `Correo` VARCHAR(50) NOT NULL,
   `Contraseña` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idUsuarios`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Mixtecatl-DB`.`Cliente`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Cliente` (
-  `idCliente` INT NOT NULL AUTO_INCREMENT,
-  `Direccion` VARCHAR(150) NOT NULL,
+  `Telefono` VARCHAR(45) NOT NULL,
   `Fecha_Registro` DATETIME NOT NULL,
-  `Usuarios_idUsuarios` INT NOT NULL,
-  PRIMARY KEY (`idCliente`),
-  INDEX `fk_Cliente_Usuarios_idx` (`Usuarios_idUsuarios` ASC) VISIBLE,
-  CONSTRAINT `fk_Cliente_Usuarios`
-    FOREIGN KEY (`Usuarios_idUsuarios`)
-    REFERENCES `Mixtecatl-DB`.`Usuarios` (`idUsuarios`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idUsuario`))
 ENGINE = InnoDB;
 
 
@@ -48,11 +32,11 @@ ENGINE = InnoDB;
 -- Table `Mixtecatl-DB`.`Platillo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Platillo` (
-  `idPlatillo` INT NOT NULL AUTO_INCREMENT,
+  `idPlatillo` BIGINT(50) NOT NULL AUTO_INCREMENT,
   `Nombre_Platillo` VARCHAR(50) NOT NULL,
   `Categoria` VARCHAR(50) NOT NULL,
   `Precio` DECIMAL(10,2) NOT NULL,
-  `Imagen` BLOB NOT NULL,
+  `Imagen` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`idPlatillo`))
 ENGINE = InnoDB;
 
@@ -61,22 +45,22 @@ ENGINE = InnoDB;
 -- Table `Mixtecatl-DB`.`Pedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Pedido` (
-  `idPedido` INT NOT NULL AUTO_INCREMENT,
+  `idPedido` BIGINT(50) NOT NULL AUTO_INCREMENT,
   `Fecha_Solicitud` DATETIME NOT NULL,
   `Estado_Pedido` VARCHAR(50) NOT NULL,
-  `Cliente_idCliente` INT NOT NULL,
-  `Platillo_idPlatillo` INT NOT NULL,
-  INDEX `fk_Pedido_Cliente1_idx` (`Cliente_idCliente` ASC) VISIBLE,
+  `Platillo_idPlatillo` BIGINT(50) NOT NULL,
+  `Usuario_idUsuario` BIGINT(50) NOT NULL,
   INDEX `fk_Pedido_Platillo1_idx` (`Platillo_idPlatillo` ASC) VISIBLE,
   PRIMARY KEY (`idPedido`),
-  CONSTRAINT `fk_Pedido_Cliente1`
-    FOREIGN KEY (`Cliente_idCliente`)
-    REFERENCES `Mixtecatl-DB`.`Cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_Pedido_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Pedido_Platillo1`
     FOREIGN KEY (`Platillo_idPlatillo`)
     REFERENCES `Mixtecatl-DB`.`Platillo` (`idPlatillo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pedido_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Mixtecatl-DB`.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -86,7 +70,7 @@ ENGINE = InnoDB;
 -- Table `Mixtecatl-DB`.`Mesas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Mesas` (
-  `idMesas` INT NOT NULL AUTO_INCREMENT,
+  `idMesas` BIGINT(50) NOT NULL AUTO_INCREMENT,
   `Disponibilidad` TINYINT NOT NULL,
   PRIMARY KEY (`idMesas`))
 ENGINE = InnoDB;
@@ -100,12 +84,19 @@ CREATE TABLE IF NOT EXISTS `Mixtecatl-DB`.`Reservaciones` (
   `Fecha_Reservacion` DATETIME NOT NULL,
   `Nombre_Solicitante` VARCHAR(50) NOT NULL,
   `Apellido_Solicitante` VARCHAR(50) NOT NULL,
-  `Mesas_idMesas` INT NOT NULL,
+  `Mesas_idMesas` BIGINT(50) NOT NULL,
+  `Usuario_idUsuario` BIGINT(50) NULL,
   PRIMARY KEY (`idReservaciones`),
   INDEX `fk_Reservaciones_Mesas1_idx` (`Mesas_idMesas` ASC) VISIBLE,
+  INDEX `fk_Reservaciones_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
   CONSTRAINT `fk_Reservaciones_Mesas1`
     FOREIGN KEY (`Mesas_idMesas`)
     REFERENCES `Mixtecatl-DB`.`Mesas` (`idMesas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Reservaciones_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Mixtecatl-DB`.`Usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
