@@ -1,8 +1,8 @@
-
 /* @import url('./base/variables.css'); */
 @import url('./components/navbar.css');
 @import url('./components/footer.css');
-body{
+
+body {
   background-color: #1c2a2a;
   font-family: 'Roboto' sans-serif;
   color: white;
@@ -10,8 +10,159 @@ body{
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
-.titlesFont{
+
+.titlesFont {
   font-family: 'Italianno', sans-serif;
+}
+
+
+.container-carrousel {
+  width: 95%;
+  max-width: 95%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.container-carrousel p {
+  font-family: 'Italianno', sans-serif;
+  font-size: clamp(40px, 8vw, 100px);
+}
+
+.carousel-item img {
+  border-radius: 20px;
+  object-fit: cover;
+  height: 350px;
+  max-height: 350px;
+}
+
+#carouselExampleSlidesOnly {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.overlay-carousel {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.buttons-carousel {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons-carousel a {
+  background-color: #43AA8B;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none; /* IMPORTANTE para quitar subrayado */
+  display: inline-block; /* hace que respete padding como botón */
+  transition: 0.3s ease;
+}
+
+
+.foodcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 70px
+}
+
+.foodcard img {
+  height: 400px;
+  max-width: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.foodcard a {
+  text-decoration: none;
+  font-family: 'Italianno', sans-serif;
+  color: white;
+  font-size: 50px;
+}
+
+.container-reservas {
+    background-color: #577D86;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    padding: 40px 0;
+}
+
+.bloque-reservas-u,
+.bloque-reservas-d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.bloque-reservas-d {
+    border-left: 1px solid white;
+}
+
+.container-reservas p {
+    font-family: 'Italianno', cursive;
+    font-size: 55px;
+    color: white;
+    margin: 0;
+}
+
+.bi-basket,
+.bi-calendar-check {
+    font-size: 70px;
+    color: white;
+}
+
+.container-reservas a {
+    background-color: #43AA8B;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.container-reservas a:hover {
+    color: white;
+}
+
+.container-Snos{
+  margin: 20px;
+}
+
+.container-Snos a{
+    background-color: #43AA8B;
+    max-width: 150px;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.img-log {
+   height: auto;
+   width:80% ;
+   border-radius: 20px;
+}
+
+.quienesTxt{
+   font-family: 'Italianno', sans-serif;
+   font-size: 50px;
 }
