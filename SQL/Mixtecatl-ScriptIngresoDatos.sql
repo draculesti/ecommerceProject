@@ -1,104 +1,133 @@
-USE `Mixtecatl-DB`;
+USE mixDB;
 
--- ===========================
+-- ==========================================
 -- USUARIOS
--- ===========================
-INSERT INTO Usuario
-(Nombre, Correo, Contraseña, Telefono, Fecha_Registro)
+-- ==========================================
+INSERT INTO usuarios (nombre, correo, contraseña, telefono, fechaRegistro)
 VALUES
-('Juan Pérez','juan@gmail.com','123456','9511111111','2025-01-05 10:15:00'),
-('María López','maria@gmail.com','123456','9511111112','2025-01-08 09:30:00'),
-('Carlos Hernández','carlos@gmail.com','123456','9511111113','2025-01-10 14:00:00'),
-('Ana Martínez','ana@gmail.com','123456','9511111114','2025-01-12 16:20:00'),
-('Luis Ramírez','luis@gmail.com','123456','9511111115','2025-01-18 11:45:00'),
-('Fernanda Cruz','fernanda@gmail.com','123456','9511111116','2025-01-22 13:10:00'),
-('Miguel Torres','miguel@gmail.com','123456','9511111117','2025-01-25 18:40:00'),
-('Daniela Gómez','daniela@gmail.com','123456','9511111118','2025-02-01 12:00:00'),
-('Jorge Castillo','jorge@gmail.com','123456','9511111119','2025-02-05 15:00:00'),
-('Sofía Morales','sofia@gmail.com','123456','9511111120','2025-02-10 17:30:00');
+('Juan Pérez', 'juan@gmail.com', '123456', '5512345678', '2025-01-15 10:30:00'),
+('María López', 'maria@gmail.com', '123456', '5511122233', '2025-01-20 11:15:00'),
+('Carlos Sánchez', '123456', '123456', '5522233344', '2025-02-01 09:45:00'),
+('Ana Torres', 'ana@gmail.com', '123456', '5533344455', '2025-02-10 16:20:00'),
+('Luis Ramírez', 'luis@gmail.com', '123456', '5544455566', '2025-03-05 13:00:00'),
+('Fernanda Cruz', 'fernanda@gmail.com', '123456', '5555566677', '2025-03-12 15:40:00'),
+('Miguel Herrera', 'miguel@gmail.com', '123456', '5566677788', '2025-04-02 11:25:00'),
+('Sofía Morales', 'sofia@gmail.com', '123456', '5577788899', '2025-04-10 09:15:00');
 
-
--- ===========================
--- PLATILLOS
--- ===========================
-INSERT INTO Platillo
-(Nombre_Platillo, Categoria, Precio, Imagen)
-VALUES
-('Tlayuda Tradicional','Platillo Principal',120.00,'img/tlayuda.jpg'),
-('Mole Negro','Platillo Principal',180.00,'img/mole.jpg'),
-('Tasajo Asado','Carnes',170.00,'img/tasajo.jpg'),
-('Cecina Enchilada','Carnes',165.00,'img/cecina.jpg'),
-('Memelas','Antojitos',80.00,'img/memelas.jpg'),
-('Empanadas de Quesillo','Antojitos',75.00,'img/empanadas.jpg'),
-('Enmoladas','Platillo Principal',140.00,'img/enmoladas.jpg'),
-('Chocolate Oaxaqueño','Bebidas',45.00,'img/chocolate.jpg'),
-('Agua de Horchata','Bebidas',35.00,'img/horchata.jpg'),
-('Agua de Jamaica','Bebidas',35.00,'img/jamaica.jpg'),
-('Chapulines','Entradas',95.00,'img/chapulines.jpg'),
-('Quesillo Fundido','Entradas',110.00,'img/quesillo.jpg'),
-('Nieves Artesanales','Postres',60.00,'img/nieves.jpg'),
-('Flan Casero','Postres',55.00,'img/flan.jpg'),
-('Café de Olla','Bebidas',40.00,'img/cafe.jpg');
-
-
--- ===========================
+-- ==========================================
 -- MESAS
--- ===========================
-INSERT INTO Mesas
-(Disponibilidad)
+-- ==========================================
+INSERT INTO mesas (disponibilidad)
 VALUES
 (1),
 (1),
 (0),
 (1),
-(0),
-(1),
 (1),
 (0),
 (1),
+(1),
+(0),
 (1);
 
+-- ==========================================
+-- PLATILLOS
+-- ==========================================
+INSERT INTO platillos (nombrePlatillo, categoria, precio, imagen)
+VALUES
+('Hamburguesa Clásica', 'Hamburguesas', 120.00, 'hamburguesa_clasica.jpg'),
+('Hamburguesa BBQ', 'Hamburguesas', 145.00, 'hamburguesa_bbq.jpg'),
+('Pizza Pepperoni', 'Pizzas', 180.00, 'pizza_pepperoni.jpg'),
+('Pizza Hawaiana', 'Pizzas', 185.00, 'pizza_hawaiana.jpg'),
+('Tacos al Pastor', 'Tacos', 95.00, 'tacos_pastor.jpg'),
+('Tacos de Arrachera', 'Tacos', 130.00, 'tacos_arrachera.jpg'),
+('Pasta Alfredo', 'Pastas', 155.00, 'pasta_alfredo.jpg'),
+('Ensalada César', 'Ensaladas', 90.00, 'ensalada_cesar.jpg'),
+('Refresco', 'Bebidas', 35.00, 'refresco.jpg'),
+('Limonada', 'Bebidas', 45.00, 'limonada.jpg'),
+('Agua Mineral', 'Bebidas', 40.00, 'agua_mineral.jpg'),
+('Pastel de Chocolate', 'Postres', 80.00, 'pastel_chocolate.jpg'),
+('Pay de Queso', 'Postres', 75.00, 'pay_queso.jpg');
 
--- ===========================
+-- ==========================================
 -- PEDIDOS
--- ===========================
-INSERT INTO Pedido
-(Fecha_Solicitud, Estado_Pedido, Platillo_idPlatillo, Usuario_idUsuario)
+-- ==========================================
+INSERT INTO pedidos (fechaSolicitud, estadoPedido, usuario_idUsuario)
 VALUES
-('2025-03-01 13:00:00','Pendiente',1,1),
-('2025-03-01 13:15:00','Preparando',2,2),
-('2025-03-01 13:25:00','Entregado',3,3),
-('2025-03-02 14:10:00','Entregado',5,4),
-('2025-03-02 15:00:00','Cancelado',6,5),
-('2025-03-03 12:45:00','Preparando',7,6),
-('2025-03-03 13:10:00','Pendiente',8,7),
-('2025-03-04 14:20:00','Entregado',10,8),
-('2025-03-04 15:15:00','Preparando',11,9),
-('2025-03-05 16:00:00','Pendiente',12,10),
-('2025-03-05 16:20:00','Entregado',13,1),
-('2025-03-06 12:30:00','Preparando',14,2),
-('2025-03-06 13:45:00','Pendiente',15,3),
-('2025-03-07 14:50:00','Entregado',4,4),
-('2025-03-07 15:30:00','Preparando',9,5);
+('2025-05-01 13:10:00', 'Pendiente', 1),
+('2025-05-01 14:20:00', 'Preparando', 2),
+('2025-05-02 15:30:00', 'Entregado', 3),
+('2025-05-03 12:45:00', 'Cancelado', 1),
+('2025-05-04 18:00:00', 'Entregado', 4),
+('2025-05-05 20:10:00', 'Pendiente', 5),
+('2025-05-06 13:50:00', 'Preparando', 6),
+('2025-05-07 19:25:00', 'Entregado', 7),
+('2025-05-08 21:00:00', 'Pendiente', 8),
+('2025-05-09 17:40:00', 'Entregado', 2);
 
-
--- ===========================
+-- ==========================================
 -- RESERVACIONES
--- ===========================
-INSERT INTO Reservaciones
-(Fecha_Reservacion,
-Nombre_Solicitante,
-Apellido_Solicitante,
-Mesas_idMesas,
-Usuario_idUsuario)
+-- ==========================================
+INSERT INTO reservaciones
+(fechaReservacion, nombreSolicitante, apellidoSolicitante, mesas_idMesas, usuario_idUsuario)
 VALUES
-('2025-04-01 14:00:00','Juan','Pérez',1,1),
-('2025-04-01 15:00:00','María','López',2,2),
-('2025-04-02 13:30:00','Carlos','Hernández',3,3),
-('2025-04-02 16:00:00','Ana','Martínez',4,4),
-('2025-04-03 14:30:00','Luis','Ramírez',5,5),
-('2025-04-03 18:00:00','Fernanda','Cruz',6,6),
-('2025-04-04 13:00:00','Miguel','Torres',7,7),
-('2025-04-04 15:45:00','Daniela','Gómez',8,8),
-('2025-04-05 17:00:00','Jorge','Castillo',9,9),
-('2025-04-05 19:00:00','Sofía','Morales',10,10);
+('2025-06-10 19:00:00', 'Juan', 'Pérez', 1, 1),
+('2025-06-10 20:00:00', 'María', 'López', 2, 2),
+('2025-06-11 18:30:00', 'Carlos', 'Sánchez', 4, 3),
+('2025-06-12 21:00:00', 'Ana', 'Torres', 5, 4),
+('2025-06-13 20:00:00', 'Luis', 'Ramírez', 7, 5),
+('2025-06-14 19:30:00', 'Fernanda', 'Cruz', 8, 6),
+('2025-06-15 18:00:00', 'Miguel', 'Herrera', 10, 7),
+('2025-06-16 20:00:00', 'Pedro', 'Gómez', 2, NULL),
+('2025-06-17 21:00:00', 'Laura', 'Jiménez', 5, NULL);
+
+-- ==========================================
+-- DETALLE PEDIDOS
+-- ==========================================
+INSERT INTO detallePedidos
+(cantidad, precioUnitario, subtotal, platillo_idPlatillo, pedidos_idPedido)
+VALUES
+-- Pedido 1
+(2,120,240,1,1),
+(2,35,70,9,1),
+
+-- Pedido 2
+(1,180,180,3,2),
+(2,45,90,10,2),
+
+-- Pedido 3
+(3,95,285,5,3),
+(1,80,80,12,3),
+
+-- Pedido 4
+(2,155,310,7,4),
+
+-- Pedido 5
+(1,90,90,8,5),
+(2,35,70,9,5),
+
+-- Pedido 6
+(2,145,290,2,6),
+(1,75,75,13,6),
+
+-- Pedido 7
+(1,185,185,4,7),
+(2,40,80,11,7),
+
+-- Pedido 8
+(4,95,380,5,8),
+
+-- Pedido 9
+(2,130,260,6,9),
+(2,45,90,10,9),
+
+-- Pedido 10
+(1,120,120,1,10),
+(1,80,80,12,10);
+
+SELECT * FROM usuarios;
+SELECT * FROM reservaciones;
+SELECT * FROM mesas;
+SELECT * FROM platillos;
+SELECT * FROM pedidos;
+SELECT * FROM detallePedidos;
