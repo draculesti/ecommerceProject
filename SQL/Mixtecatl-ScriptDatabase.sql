@@ -100,9 +100,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mixDB`.`detallePedidos` (
   `idDetalle` BIGINT(50) NOT NULL AUTO_INCREMENT,
-  `cantidad` INT NULL,
-  `precioUnitario` BIGINT(50) NULL,
-  `subtotal` BIGINT(50) NULL,
+  `cantidad` INT NOT NULL,
+  `precioUnitario` DECIMAL(38,2) NOT NULL,
+  `subtotal` DECIMAL(38,2) NOT NULL,
   `platillo_idPlatillo` BIGINT(50) NOT NULL,
   `pedidos_idPedido` BIGINT(50) NOT NULL,
   PRIMARY KEY (`idDetalle`),
