@@ -1,12 +1,12 @@
 .cart-page {
   min-height: 100vh;
-  background-color: #5c848b;
+  /* background-color: #5c848b; */
   font-family: "Roboto", sans-serif;
   color: #ffffff;
 }
 
 .cart-hero {
-  background-color: #132826;
+  /* background-color: #132826; */
   padding: 60px 8%;
   text-align: center;
 }

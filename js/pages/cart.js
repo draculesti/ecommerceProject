@@ -1,4 +1,6 @@
-const CART_STORAGE_KEY = "mixtecaltCart";
+// const CART_STORAGE_KEY = "mixtecaltCart";
+
+import { addProductToCart, getCart } from "../services/cartApi.js";
 
 const cartItemsContainer = document.getElementById("cart-items");
 const emptyCartContainer = document.getElementById("empty-cart");
@@ -12,13 +14,17 @@ const totalElement = document.getElementById("total");
 const clearCartButton = document.getElementById("clear-cart-btn");
 const checkoutButton = document.getElementById("checkout-btn");
 
-function getCart() {
-  return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
-}
+// function getCart() {
+//   return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+// }
 
-function saveCart(cart) {
-  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
-}
+// function saveCart(cart) {
+//   localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+// }
+
+getCart();
+const saveCart = addProductToCart(product);
+
 
 function formatCurrency(amount) {
   return Number(amount).toLocaleString("es-MX", {

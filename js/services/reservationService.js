@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/api/reservations";
 
-export async function saveReservation(reservation) {
+export async const  saveReservation = ( reservation)=> {
 
   const response = await fetch(API_URL, {
     method: "POST",

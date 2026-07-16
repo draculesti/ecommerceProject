@@ -56,12 +56,15 @@ form.addEventListener('submit', (event) => {
   }
 
   const reservationData = {
-    fullName: fields.fullName.value.trim(),
-    phone: fields.phone.value.trim(),
+    nombre_Solicitante:fields.fullName.value.trim(),
+    apellido_solicitantent:fields.email.value.trim(),
+    // phone: fields.phone.value.trim(),
     email: fields.email.value.trim(),
-    date: fields.date.value,
-    time: fields.time.value,
-    guests: fields.guests.value
+    fecha_reservacion: fields.date.value,
+    id_mesa: 1,
+    id_usuario: 10
+    // time: fields.time.value,
+    // : fields.guests.value
   };
    try {
     await saveReservation(reservationData);
