@@ -108,21 +108,16 @@ async function addPlatillo() {
   };
 
   try {
-    await addMenuItem(nuevoPlatillo);
+     await addMenuItem(nuevoPlatillo);
+
     menuData = await loadMenu();
     renderTable();
 
-    document.getElementById("foodIpt").value = "";
-    document.getElementById("priceIpt").value = "";
-    document.getElementById("categoryIpt").value = "";
-    document.getElementById("imageIpt").value = "";
-
-    cargadaImagenBase64 = "";
-    alert("Product created.");
+    alert("Producto creado");
 
   } catch (error) {
     console.error(error);
-    alert("Error creating product.");
+    alert("Error al crear producto");
   }
 }
 
