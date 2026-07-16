@@ -4,10 +4,6 @@
 
 const loginForm = document.getElementById("loginForm");
 
-// ==========================
-// INPUTS
-// ==========================
-
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
@@ -96,9 +92,7 @@ function limpiarValidaciones() {
 loginForm.addEventListener("submit", (event) => {
 
     event.preventDefault();
-
     limpiarValidaciones();
-
     let formularioValido = true;
 
         // ======================

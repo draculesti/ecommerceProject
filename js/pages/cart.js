@@ -39,7 +39,7 @@ function renderCart() {
   cartItemsContainer.innerHTML = "";
 
   const totalProducts = cart.reduce((total, product) => {
-    return total + product.quantity;
+    return total + product.cantidad;
   }, 0);
 
   productsCount.textContent = `${totalProducts} producto${totalProducts !== 1 ? "s" : ""}`;
@@ -59,29 +59,29 @@ function renderCart() {
     item.innerHTML = `
       <div class="cart-img-box">
         ${
-          product.img
-            ? `<img src="${product.img}" alt="${product.name}" class="cart-img">`
+          product.imagen
+            ? `<img src="${product.imagen}" alt="${product.nombre_platillo}" class="cart-img">`
             : `<span class="cart-placeholder">🍽️</span>`
         }
       </div>
 
       <div class="cart-info-box">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <span>${formatCurrency(product.price)}</span>
+        <h3>${product.nombre_platillo}</h3>
+        <p>${product.descripcion}</p>
+        <span>${formatCurrency(product.precio)}</span>
       </div>
 
       <div class="cart-quantity-box">
-        <button class="decrease-btn" data-id="${product.id}">−</button>
-        <strong>${product.quantity}</strong>
-        <button class="increase-btn" data-id="${product.id}">+</button>
+        <button class="decrease-btn" data-id="${product.id_platillo}">−</button>
+        <strong>${product.cantidad}</strong>
+        <button class="increase-btn" data-id="${product.id_platillo}">+</button>
       </div>
 
       <div class="cart-subtotal-box">
-        ${formatCurrency(product.price * product.quantity)}
+        ${formatCurrency(product.precio * product.cantidad)}
       </div>
 
-      <button class="cart-delete-btn" data-id="${product.id}">
+      <button class="cart-delete-btn" data-id="${product.id_platillo}">
         <i class="fa-solid fa-trash"></i>
       </button>
     `;
@@ -96,7 +96,7 @@ function updateSummary() {
   const cart = getCart();
 
   const subtotal = cart.reduce((total, product) => {
-    return total + product.price * product.quantity;
+    return total + product.precio * product.cantidad;
   }, 0);
 
   const iva = subtotal * 0.16;
@@ -113,10 +113,10 @@ function increaseQuantity(productId) {
   const cart = getCart();
 
   const updatedCart = cart.map(product => {
-    if (String(product.id) === String(productId)) {
+    if (String(product.id_platillo) === String(productId)) {
       return {
         ...product,
-        quantity: product.quantity + 1
+        quantity: product.cantidad + 1
       };
     }
 
@@ -131,10 +131,10 @@ function decreaseQuantity(productId) {
   const cart = getCart();
 
   const updatedCart = cart.map(product => {
-    if (String(product.id) === String(productId) && product.quantity > 1) {
+    if (String(product.id_platillo) === String(productId) && product.cantidad > 1) {
       return {
         ...product,
-        quantity: product.quantity - 1
+        quantity: product.cantidad - 1
       };
     }
 
@@ -149,7 +149,7 @@ function removeProduct(productId) {
   const cart = getCart();
 
   const updatedCart = cart.filter(product => {
-    return String(product.id) !== String(productId);
+    return String(product.id_platillo) !== String(productId);
   });
 
   saveCart(updatedCart);

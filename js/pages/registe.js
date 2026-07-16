@@ -1,22 +1,13 @@
-// ==========================
-// FORMULARIO
-// ==========================
+import { addUser } from "../services/userService.js";
+
 
 const registroForm = document.getElementById("registroForm");
-
-// ==========================
-// INPUTS
-// ==========================
 
 const nombre = document.getElementById("nombre");
 const telefono = document.getElementById("telefono");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
-
-// ==========================
-// MENSAJES DE ERROR
-// ==========================
 
 const errorNombre = document.getElementById("errorNombre");
 const errorTelefono = document.getElementById("errorTelefono");
@@ -136,7 +127,7 @@ function limpiarValidaciones() {
 // VALIDACION
 // ==========================
 
-registroForm.addEventListener("submit", (event) => {
+registroForm.addEventListener("submit", async(event) => {
 
     event.preventDefault();
 
@@ -372,13 +363,9 @@ else {
     // ======================
 
     const nuevoUsuario = {
-
         nombre: nombre.value.trim(),
-
         telefono: telefono.value.trim(),
-
         email: email.value.trim(),
-
         password: password.value
 
     };
@@ -395,10 +382,7 @@ else {
     // GUARDAR JSON
     // ======================
 
-    localStorage.setItem(
-        "users",
-        JSON.stringify(usuarios)
-    );
+    await addUser(nuevoUsuario);
 
     // ======================
     // MENSAJE EXITO
