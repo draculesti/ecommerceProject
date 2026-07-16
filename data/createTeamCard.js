@@ -21,7 +21,7 @@ export const teamMembers = [
   },
   {
     name: 'Isaac Ulises Pérez Bravo',
-    role: 'Desarrolladora FullStack',
+    role: 'Desarrollador FullStack',
     description:
       'Desarrollador Full-Stack, enfocado en programación backend Java y a la ciencia de datos mediante Python. Desarrollo y construyo aplicaciones y herramientas, para la mejora de procesos y resultados.',
     image: '../assets/imageFiles/fotoIsaac.jpg',
