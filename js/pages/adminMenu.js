@@ -68,7 +68,7 @@ function renderTable() {
       : `<span>No image</span>`;
 
     tr.innerHTML = `
-            <td>${item.id__platillo}</td>
+            <td>${item.id_platillo}</td>
             <td>${item.nombre_platillo}</td>
             <td>${item.categoria}</td>
             <td>${item.precio}</td>
