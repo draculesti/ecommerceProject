@@ -1,4 +1,4 @@
-import { getMenu } from './menuApi.js';
+import { createProduct, deleteProduct, getMenu, updateProduct } from './menuApi.js';
 
 export  const loadMenu = async() => {
     try {
