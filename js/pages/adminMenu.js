@@ -63,27 +63,27 @@ function renderTable() {
   tableBody.innerHTML = "";
   menuData.forEach((item) => {
     const tr = document.createElement("tr");
-    const imgTag = item.img
-      ? `<img src="${item.img}" alt="${item.name}" width="80">`
+    const imgTag = item.imagen
+      ? `<img src="${item.imagen}" alt="${item.nombre_platillo}" width="80">`
       : `<span>No image</span>`;
 
     tr.innerHTML = `
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.category}</td>
-            <td>${item.price}</td>
+            <td>${item.id__platillo}</td>
+            <td>${item.nombre_platillo}</td>
+            <td>${item.categoria}</td>
+            <td>${item.precio}</td>
             <td>${imgTag}</td>
             <td>
                 <button
                     class="btn-custom btn-editar"
-                    data-id="${item.id}">
+                    data-id="${item.id__platillo}">
                     Editar
                 </button>
             </td>
         `;
 
     tr.querySelector(".btn-editar")
-      .addEventListener("click", () => openEditModal(item.id));
+      .addEventListener("click", () => openEditModal(item.id__platillo));
     tableBody.appendChild(tr);
   });
 }
@@ -100,11 +100,11 @@ async function addPlatillo() {
   }
 
   const nuevoPlatillo = {
-    name: platoInput,
-    category: catInput,
-    price: precioInput,
-    img: cargadaImagenBase64,
-    description: ""
+    nombre_platillo: platoInput,
+    categoria: catInput,
+    precio: precioInput,
+    imagen: cargadaImagenBase64,
+    descripcion: ""
   };
 
   try {
@@ -128,7 +128,7 @@ async function addPlatillo() {
 
 export function openEditModal(id) {
 
-  const product = menuData.find(item => item.id === id);
+  const product = menuData.find(item => item.id__platillo === id);
 
   if (!product) return;
 
@@ -139,9 +139,9 @@ export function openEditModal(id) {
     );
   }
 
-  document.getElementById("editId").value = product.id;
-  document.getElementById("editFoodIpt").value = product.name;
-  document.getElementById("editPriceIpt").value = product.price;
+  document.getElementById("editId").value = product.id__platillo;
+  document.getElementById("editFoodIpt").value = product.nombre_platillo;
+  document.getElementById("editPriceIpt").value = product.precio;
   document.getElementById("editCategoryIpt").value = product.category;
 
   editImagenBase64 = product.img;
@@ -158,11 +158,11 @@ export function openEditModal(id) {
 async function saveEdit() {
   const id = Number(document.getElementById("editId").value);
   const updatedProduct = {
-    name: document.getElementById("editFoodIpt").value.trim(),
-    price: document.getElementById("editPriceIpt").value.trim(),
-    category: document.getElementById("editCategoryIpt").value.trim(),
-    img: editImagenBase64,
-    description: ""
+    nombre_platillo: document.getElementById("editFoodIpt").value.trim(),
+    precio: document.getElementById("editPriceIpt").value.trim(),
+    categoria: document.getElementById("editCategoryIpt").value.trim(),
+    imagen: editImagenBase64,
+    descripcion: ""
   };
 
   try {
