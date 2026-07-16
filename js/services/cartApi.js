@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/cart";
+const API_URL = "http://localhost:8080/mixapi/pedidos/";
 
 export async const getCart = ()=> {
     const response = await fetch(API_URL);

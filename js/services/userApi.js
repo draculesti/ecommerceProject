@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:8080/api/users.js";
+const API_URL = "http://localhost:8080/mixapi/usuarios/";
 
 export async const createUser = (user) => {
   const response = await fetch(API_URL, {

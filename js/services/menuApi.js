@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/products";
+const API_URL = "http://localhost:8080/mixapi/platillos/";
 
 export async const getMenu = () =>{
     const response = await fetch(API_URL);

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/reservations";
+const API_URL = "http://localhost:8080/mixapi/reservaciones/";
 
 export async const  saveReservation = ( reservation)=> {
 
