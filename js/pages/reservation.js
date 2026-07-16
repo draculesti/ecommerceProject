@@ -56,7 +56,7 @@ form.addEventListener('submit', (event) => {
   }
 
   const reservationData = {
-    nombre_Solicitante:fields.fullName.value.trim(),
+    nombre_solicitante:fields.fullName.value.trim(),
     apellido_solicitantent:fields.email.value.trim(),
     // phone: fields.phone.value.trim(),
     email: fields.email.value.trim(),
