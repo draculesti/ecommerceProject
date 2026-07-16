@@ -1,4 +1,4 @@
-import { createUser } from "./userApi,js";
+import { createUser } from "./userApi.js";
 
 
 export async const addUser = (user) => {
