@@ -1,7 +1,7 @@
 import { createUser } from "./userApi.js";
 
 
-export async const addUser = (user) => {
+export  const addUser = async(user) => {
 
   try {
     return await createUser(user);

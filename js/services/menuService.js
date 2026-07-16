@@ -1,6 +1,6 @@
 import { getMenu } from './menuApi.js';
 
-export async const loadMenu = () => {
+export  const loadMenu = async() => {
     try {
         const menu = await getMenu();
         return menu;
@@ -10,7 +10,7 @@ export async const loadMenu = () => {
     }
 }
 
-export async const addMenuItem = (product) => {
+export  const addMenuItem = async(product) => {
     try {
         return await createProduct(product);
     } catch (error) {
@@ -19,7 +19,7 @@ export async const addMenuItem = (product) => {
     }
 }
 
-export async const editMenuItem =(id, product) => {
+export  const editMenuItem = async(id, product) => {
     try {
         return await updateProduct(id, product);
     } catch (error) {
@@ -28,7 +28,7 @@ export async const editMenuItem =(id, product) => {
     }
 }
 
-export async const removeMenuItem = (id) => {
+export  const removeMenuItem = async(id) => {
     try {
         return await deleteProduct(id);
     } catch (error) {

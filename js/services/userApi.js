@@ -1,7 +1,7 @@
 
 const API_URL = "http://localhost:8080/mixapi/usuarios/";
 
-export async const createUser = (user) => {
+export  const createUser = async(user) => {
   const response = await fetch(API_URL, {
     method: "POST",
     headers: {

@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/mixapi/pedidos/";
 
-export async const getCart = ()=> {
+export  const getCart = async()=> {
     const response = await fetch(API_URL);
 
     if (!response.ok) {
@@ -10,7 +10,7 @@ export async const getCart = ()=> {
     return response.json();
 }
 
-export async const  addProductToCart = (product)=> {
+export  const  addProductToCart = async(product)=> {
     const response = await fetch(API_URL, {
         method: "POST",
         headers: {

@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/mixapi/reservaciones/";
 
-export async const  saveReservation = ( reservation)=> {
+export  const  saveReservation = async( reservation)=> {
 
   const response = await fetch(API_URL, {
     method: "POST",

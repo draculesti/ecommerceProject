@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080/mixapi/platillos/";
 
-export async const getMenu = () =>{
+export  const getMenu = async() =>{
     const response = await fetch(API_URL);
 
     if (!response.ok) {
@@ -10,7 +10,7 @@ export async const getMenu = () =>{
     return await response.json();
 }
 
-export async const createProduct =(product) => {
+export  const createProduct = async(product) => {
     const response = await fetch(API_URL, {
         method: "POST",
         headers: {
@@ -27,7 +27,7 @@ export async const createProduct =(product) => {
 }
 
 
-export async const updateProduct = (id, product) => {
+export  const updateProduct = async(id, product) => {
     const response = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: {
@@ -44,7 +44,7 @@ export async const updateProduct = (id, product) => {
 }
 
 
-export async const deleteProduct = (id) => {
+export  const deleteProduct = async(id) => {
     const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE"
     });
