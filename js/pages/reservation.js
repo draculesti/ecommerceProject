@@ -63,9 +63,16 @@ form.addEventListener('submit', (event) => {
     time: fields.time.value,
     guests: fields.guests.value
   };
-  saveReservation(reservationData);
+   try {
+    await saveReservation(reservationData);
 
-  alert('Reservation created successfully!');
-  form.reset();
-  clearValidation();
+    alert("Reservation created successfully!");
+
+    form.reset();
+    clearValidation();
+
+  } catch (error) {
+    alert("Error creating reservation.");
+    console.error(error);
+  }
 });

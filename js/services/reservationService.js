@@ -1,10 +1,18 @@
+const API_URL = "http://localhost:8080/api/reservations";
 
-// reservations = [{ 10:[{},{}],11:,[{},{}]  }];
+export async function saveReservation(reservation) {
 
-export const saveReservation = (reservation) =>{
-  let reservations = JSON.parse(localStorage.getItem("reservations"));
-  if (!reservations) {
-      localStorage.setItem("reservations", JSON.stringify(menuItems));
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(reservation)
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to save reservation");
   }
 
+  return await response.json();
 }
