@@ -93,8 +93,9 @@ async function addPlatillo() {
   const platoInput = document.getElementById("foodIpt").value.trim();
   const precioInput = document.getElementById("priceIpt").value.trim();
   const catInput = document.getElementById("categoryIpt").value.trim();
+  const descripcion = document.getElementById("descripcion").value.trim();
 
-  if (!platoInput || !precioInput || !catInput) {
+  if (!platoInput || !precioInput || !catInput ||!descripcion) {
     alert("Complete all required fields.");
     return;
   }
@@ -104,7 +105,7 @@ async function addPlatillo() {
     categoria: catInput,
     precio: precioInput,
     imagen: "https://www.cocinavital.mx/wp-content/uploads/2024/03/pancita-de-res-634x420.jpg",
-    descripcion: ""
+    descripcion
   };
 
   try {

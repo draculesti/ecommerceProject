@@ -46,7 +46,7 @@ fields.time.addEventListener('change', ()=> validateTime(fields.time));
 fields.guests.addEventListener('change', ()=> validateGuests(fields.guests));
 
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit',async (event) => {
   event.preventDefault();
 
   const isValid = validateForm();
