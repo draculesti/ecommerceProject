@@ -10,6 +10,7 @@ let menuData = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
     menuData = await loadMenu();
+    console.log(menuData);
     menuFilter("Comidas");
 });
 
