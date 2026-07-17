@@ -5,8 +5,8 @@ export const menuCard = (item) =>`
       <img src="${item.imagen}" alt="${item.nombrePlatillo}">
       <div class="overlay">
         <div>
-          <h5 class="card-title">${item.nombre}</h5>
-          <p class="price">${item.precio}</p>
+          <h5 class="card-title">${item.nombrePlatillo}</h5>
+          <p class="price">$${item.precio}</p>
           <p class="card-text">
             ${item.descripcion}
           </p>
