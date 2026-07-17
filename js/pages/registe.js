@@ -365,7 +365,7 @@ else {
     const nuevoUsuario = {
         nombre: nombre.value.trim(),
         telefono: telefono.value.trim(),
-        email: email.value.trim(),
+        correo: email.value.trim(),
         password: password.value
 
     };
