@@ -154,11 +154,12 @@ export function openEditModal(id) {
 
 async function saveEdit() {
   const id = Number(document.getElementById("editId").value);
+  console.log(id);
   const updatedProduct = {
     nombrePlatillo: document.getElementById("editFoodIpt").value.trim(),
     precio: document.getElementById("editPriceIpt").value.trim(),
     categoria: document.getElementById("editCategoryIpt").value.trim(),
-    imagen: editImagenBase64,
+    imagen: "https://www.cocinavital.mx/wp-content/uploads/2024/03/pancita-de-res-634x420.jpg",
     descripcion: document.getElementById("editDescripcion").value.trim()
   };
 

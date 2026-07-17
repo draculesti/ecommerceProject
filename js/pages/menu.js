@@ -37,9 +37,10 @@ menuContainer.addEventListener("click", (event) => {
   if (!button) return;
   const card = button.closest(".menu-card");
   const id = card.dataset.id;
-  const product = menuData.find(  (item) => String(item.idPlatillo) === id);
+  let product = menuData.find(  (item) => String(item.idPlatillo) === id);
   if (!product) return;
+  product = {...product , fechaSolicitud: new Date(), estadoPedido: "Pendiente"}
 
   addProductToCart(product);
-  alert(`${product.nombre} agragado al carrito!`);
+  alert(`${product.nombrePlatillo} agragado al carrito!`);
 });

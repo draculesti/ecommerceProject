@@ -28,7 +28,7 @@ export  const createProduct = async(product) => {
 
 
 export  const updateProduct = async(id, product) => {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_URL}${id}?nombrePlatillo=${product.nombrePlatillo}&categoria=${product.categoria}&precio=${product.precio}&imagen=${product.imagen}&descripcion=${product.descripcion}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -45,7 +45,7 @@ export  const updateProduct = async(id, product) => {
 
 
 export  const deleteProduct = async(id) => {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_URL}${id}`, {
         method: "DELETE"
     });
     if (!response.ok) {
