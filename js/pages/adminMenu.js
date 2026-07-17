@@ -100,7 +100,7 @@ async function addPlatillo() {
   }
 
   const nuevoPlatillo = {
-    nombre_platillo: platoInput,
+    nombrePlatillo: platoInput,
     categoria: catInput,
     precio: precioInput,
     imagen: "https://www.cocinavital.mx/wp-content/uploads/2024/03/pancita-de-res-634x420.jpg",
@@ -135,9 +135,9 @@ export function openEditModal(id) {
   }
 
   document.getElementById("editId").value = product.idPlatillo;
-  document.getElementById("editFoodIpt").value = product.nombre_platillo;
+  document.getElementById("editFoodIpt").value = product.nombrePlatillo;
   document.getElementById("editPriceIpt").value = product.precio;
-  document.getElementById("editCategoryIpt").value = product.category;
+  document.getElementById("editCategoryIpt").value = product.categoria;
 
   editImagenBase64 = product.img;
 
@@ -153,7 +153,7 @@ export function openEditModal(id) {
 async function saveEdit() {
   const id = Number(document.getElementById("editId").value);
   const updatedProduct = {
-    nombre_platillo: document.getElementById("editFoodIpt").value.trim(),
+    nombrePlatillo: document.getElementById("editFoodIpt").value.trim(),
     precio: document.getElementById("editPriceIpt").value.trim(),
     categoria: document.getElementById("editCategoryIpt").value.trim(),
     imagen: editImagenBase64,
