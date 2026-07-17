@@ -139,6 +139,7 @@ export function openEditModal(id) {
   document.getElementById("editFoodIpt").value = product.nombrePlatillo;
   document.getElementById("editPriceIpt").value = product.precio;
   document.getElementById("editCategoryIpt").value = product.categoria;
+  document.getElementById("editDescripcion").value = product.descripcion;
 
   editImagenBase64 = product.img;
 
@@ -158,7 +159,7 @@ async function saveEdit() {
     precio: document.getElementById("editPriceIpt").value.trim(),
     categoria: document.getElementById("editCategoryIpt").value.trim(),
     imagen: editImagenBase64,
-    descripcion: ""
+    descripcion: document.getElementById("editDescripcion").value.trim()
   };
 
   try {
