@@ -64,26 +64,26 @@ function renderTable() {
   menuData.forEach((item) => {
     const tr = document.createElement("tr");
     const imgTag = item.imagen
-      ? `<img src="${item.imagen}" alt="${item.nombre_platillo}" width="80">`
+      ? `<img src="${item.imagen}" alt="${item.nombrePlatillo}" width="80">`
       : `<span>No image</span>`;
 
     tr.innerHTML = `
             <td>${item.id_platillo}</td>
-            <td>${item.nombre_platillo}</td>
+            <td>${item.nombrePlatillo}</td>
             <td>${item.categoria}</td>
             <td>${item.precio}</td>
             <td>${imgTag}</td>
             <td>
                 <button
                     class="btn-custom btn-editar"
-                    data-id="${item.id__platillo}">
+                    data-id="${item.idPlatillo}">
                     Editar
                 </button>
             </td>
         `;
 
     tr.querySelector(".btn-editar")
-      .addEventListener("click", () => openEditModal(item.id__platillo));
+      .addEventListener("click", () => openEditModal(item.idPlatillo));
     tableBody.appendChild(tr);
   });
 }
@@ -123,7 +123,7 @@ async function addPlatillo() {
 
 export function openEditModal(id) {
 
-  const product = menuData.find(item => item.id__platillo === id);
+  const product = menuData.find(item => item.idPlatillo === id);
 
   if (!product) return;
 
@@ -134,7 +134,7 @@ export function openEditModal(id) {
     );
   }
 
-  document.getElementById("editId").value = product.id__platillo;
+  document.getElementById("editId").value = product.idPlatillo;
   document.getElementById("editFoodIpt").value = product.nombre_platillo;
   document.getElementById("editPriceIpt").value = product.precio;
   document.getElementById("editCategoryIpt").value = product.category;
