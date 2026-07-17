@@ -18,6 +18,6 @@ export const menuCard = (item) =>`
         </div>
       </div>
     </div>
-      <h2 class="text-center">${item.nombre}</h2>
+      <h2 class="text-center">${item.nombrePlatillo}</h2>
   </div>
 `; 

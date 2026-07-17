@@ -103,7 +103,7 @@ async function addPlatillo() {
     nombre_platillo: platoInput,
     categoria: catInput,
     precio: precioInput,
-    imagen: cargadaImagenBase64,
+    imagen: "https://www.cocinavital.mx/wp-content/uploads/2024/03/pancita-de-res-634x420.jpg",
     descripcion: ""
   };
 
