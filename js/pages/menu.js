@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(menuData);
     menuFilter("Comidas");
 });
-
+console.log(menuData);
 const renderMenu = (list = menuData) => {
   const html = list.map((item) => menuCard(item)).join("");
   menuContainer.innerHTML = html;
 };
 
 const menuFilter = (category) => {
-  const filteredMenu = menuData.filter((item) => item.category === category);
+  const filteredMenu = menuData.filter((item) => item.categoria === category);
   renderMenu(filteredMenu);
 };
 
@@ -37,9 +37,9 @@ menuContainer.addEventListener("click", (event) => {
   if (!button) return;
   const card = button.closest(".menu-card");
   const id = card.dataset.id;
-  const product = menuData.find(  (item) => String(item.id) === id);
+  const product = menuData.find(  (item) => String(item.idPlatillo) === id);
   if (!product) return;
 
   addProductToCart(product);
-  alert(`${product.name} agragado al carrito!`);
+  alert(`${product.nombre} agragado al carrito!`);
 });
